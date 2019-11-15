@@ -2,13 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GIPHY</title>
+    <title>GIPHY API</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    
+    <!-- Buttons will Get Dumped Here -->
+    <div id="buttons-view"></div>
+
+    <form id="giphy-form">
+        <label for="giphy-input">Giphy added!</label>
+        <input type="text" id="giphy-input"><br>
+
+        <!-- Button triggers new movie to be added -->
+        <input id="add-giphy" type="submit" value="Giphy added!">
+    </form>
+
+    <!-- Movies will Get Dumped Here -->
+    <div id="giphy-view"></div>
 
 
     <!-- jQuery -->
