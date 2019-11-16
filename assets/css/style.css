@@ -6,3 +6,7 @@ button {
     border-color: #d4dfdf;
     color: #ffffff;
 }
+
+form {
+    padding: 30px;
+}
