@@ -22,11 +22,13 @@
       for (var i = 0; i < results.length; i++) {
         // Creating and storing a div
         var animalDiv = $("<div>");
+        // rating 
+        var p = $("<p>").text("Rating: " + results[i].rating);
         // Creating and storing images
         var animalImage = $("<img>");
         // Setting the src attribute of the image
         animalImage.attr("src", results[i].images.fixed_height.url);
-      
+        animalDiv.append(p);
         animalDiv.append(animalImage);
         // Prependng the animalDiv to the HTML page
         $("#images").prepend(animalDiv);

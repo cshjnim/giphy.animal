@@ -10,3 +10,8 @@ button {
 form {
     padding: 30px;
 }
+
+#add-giphy {
+    background-color: #22795f;
+    color: #ffffff;
+}
