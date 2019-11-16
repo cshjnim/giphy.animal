@@ -13,6 +13,8 @@
       method: "GET"
     })
       .then(function(response) {
+        // start with make image div empty 
+        $('#images').empty();
         console.log(queryURL);
         console.log(response);
         // storing the data by set up a new result variable
@@ -24,10 +26,16 @@
         var animalDiv = $("<div>");
         // rating 
         var p = $("<p>").text("Rating: " + results[i].rating);
+        var animated   = results[i].images.fixed_height.url;
+        var still      = results[i].images.fixed_height_still.url;
         // Creating and storing images
         var animalImage = $("<img>");
-        // Setting the src attribute of the image
-        animalImage.attr("src", results[i].images.fixed_height.url);
+        // Setting the src attribute of the image and defaulting gits to still
+        animalImage.attr("src", still);
+        animalImage.attr("data-still", still);
+        animalImage.attr("data-animate", animated);
+        animalImage.attr("data-state", 'still');
+       //append rating & images
         animalDiv.append(p);
         animalDiv.append(animalImage);
         // Prependng the animalDiv to the HTML page
