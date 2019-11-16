@@ -1,6 +1,9 @@
 
+  // Initial array of movies
+var animals = ["Dogs", "Birds", "Horses", "Pandas", "Lions", "Foxes", "Elephants"];
+
 // Adding click event
-  $("button").on("click", function() {
+function displayGif() {
     var animal = $(this).attr("data-animal");
 
     // searchable url (set limit to 10images)
@@ -14,7 +17,7 @@
     })
       .then(function(response) {
         // start with make image div empty 
-        $('#images').empty();
+        $('.images').empty();
         console.log(queryURL);
         console.log(response);
         // storing the data by set up a new result variable
@@ -23,7 +26,7 @@
       // Looping through each result item
       for (var i = 0; i < results.length; i++) {
         // Creating and storing a div
-        var animalDiv = $("<div>");
+        var animalDiv = $("<div class='animalDiv'>");
         // rating 
         var p = $("<p>").text("Rating: " + results[i].rating);
         var animated   = results[i].images.fixed_height.url;
@@ -39,14 +42,14 @@
         animalDiv.append(p);
         animalDiv.append(animalImage);
         // Prependng the animalDiv to the HTML page
-        $("#images").prepend(animalDiv);
+        $(".images").prepend(animalDiv);
       }
-    })
-  });
+      })
+  };
 
 
 // Onclick function to animate/pause gifs
-$('#images').on("click", ".gImage", function() {
+$(".images").on("click", ".gImage", function() {
 
   var state = $(this).attr('data-state');
   // If state = still, on click will animate the gif
@@ -63,15 +66,28 @@ $('#images').on("click", ".gImage", function() {
 
 // New buttons function
 function renderButtons() {
-  $(".buttons-view").empty();
+  $("#buttons-view").empty();
   // Verifying buttons
-  for (let i = 0; i < animal.length; i++) {
-    let addButton = $('<button class="button">');
+  for (var i = 0; i < animals.length; i++) {
+    var addButton = $('<button class="button">');
     addButton.addClass("animal");
-    addButton.attr("data-animal", animal[i]);
-    addButton.html(animal[i]);
+    addButton.attr("data-animal", animals[i]);
+    addButton.html(animals[i]);
 
     // add new buttons to the end of the list of existing buttons
-    $(".buttons-view").append(addButton);
+    $("#buttons-view").append(addButton);
   }
 };
+
+// New button created when field has a value entered and then cleared after confirming
+$("#add-giphy").on("click", function(event){
+  event.preventDefault();
+  var gifs = $("#giphy-input").val().trim();
+  animal.push(gifs);
+  $("#giphy-input").val("");
+  renderButtons();
+});
+
+// Calls the buttons to be created in the class 'animal'
+$(document).on("click", ".animal", displayGif);
+renderButtons();
