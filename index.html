@@ -9,18 +9,25 @@
 </head>
 <body>
     <!-- Buttons will Get Dumped Here -->
-    <div id="buttons-view"></div>
+    <div id="buttons-view">
+        <button data-animal="cat">cats</button>
+        <button data-animal="dog">dogs</button>
+        <button data-animal="bird">birds</button>
+        <button data-animal="horse">horses</button>
+        <button data-animal="panda">pandas</button>
+        <button data-animal="fox">foxes</button>
+    </div>
 
     <form id="giphy-form">
-        <label for="giphy-input">Giphy added!</label>
+        <label for="giphy-input">Add an animal! </label>
         <input type="text" id="giphy-input"><br>
 
-        <!-- Button triggers new movie to be added -->
-        <input id="add-giphy" type="submit" value="Giphy added!">
+        <!-- Button triggers new images to be added -->
+        <input id="add-giphy" type="submit" value="Submit">
     </form>
 
-    <!-- Movies will Get Dumped Here -->
-    <div id="giphy-view"></div>
+    <!-- Images will Get Dumped Here -->
+    <div id="images"></div>
 
 
     <!-- jQuery -->

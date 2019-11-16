@@ -2,8 +2,7 @@
 
 button {
     margin: 5px;
-}
-
-.btn-info {
-    background-color: rgb(7, 124, 89);
+    background-color: #22795f;
+    border-color: #d4dfdf;
+    color: #ffffff;
 }
