@@ -1,10 +1,16 @@
 
+main{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
 
 button{
     margin: 5px;
     background-color: #22795f;
     border-color: #d4dfdf;
     color: #ffffff;
+    box-shadow: 3px;
 }
 
 form {
@@ -14,4 +20,12 @@ form {
 #add-giphy {
     background-color: #22795f;
     color: #ffffff;
+}
+
+button:hover {
+    background-color: #0e3328;
+}
+
+button:focus{
+    background-color:#143764;
 }

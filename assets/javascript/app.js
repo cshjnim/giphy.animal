@@ -1,6 +1,6 @@
 
   // Initial array of movies
-var animals = ["Dogs", "Birds", "Horses", "Pandas", "Lions", "Foxes", "Elephants"];
+var animals = ["Dogs", "Birds", "Horses", "Pandas", "Lions", "Foxes", "Elephants", "Rabbits", "Hamsters", "Frogs"];
 
 // Adding click event
 function displayGif() {
