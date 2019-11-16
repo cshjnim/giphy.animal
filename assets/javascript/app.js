@@ -59,3 +59,19 @@ $('#images').on("click", ".gImage", function() {
       $(this).attr('data-state', 'still');
   }
 });
+
+
+// New buttons function
+function renderButtons() {
+  $(".buttons-view").empty();
+  // Verifying buttons
+  for (let i = 0; i < animal.length; i++) {
+    let addButton = $('<button class="button">');
+    addButton.addClass("animal");
+    addButton.attr("data-animal", animal[i]);
+    addButton.html(animal[i]);
+
+    // add new buttons to the end of the list of existing buttons
+    $(".buttons-view").append(addButton);
+  }
+};
