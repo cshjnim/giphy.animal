@@ -29,7 +29,7 @@
         var animated   = results[i].images.fixed_height.url;
         var still      = results[i].images.fixed_height_still.url;
         // Creating and storing images
-        var animalImage = $("<img>");
+        var animalImage = $('<img class="gImage">');
         // Setting the src attribute of the image and defaulting gits to still
         animalImage.attr("src", still);
         animalImage.attr("data-still", still);
@@ -43,3 +43,19 @@
       }
     })
   });
+
+
+// Onclick function to animate/pause gifs
+$('#images').on("click", ".gImage", function() {
+
+  var state = $(this).attr('data-state');
+  // If state = still, on click will animate the gif
+  if (state == 'still') {
+      $(this).attr('src', $(this).data('animate'));
+      $(this).attr('data-state', 'animate');}
+  // Otherwise, if state not still, gif will pause on click   
+  else {
+      $(this).attr('src', $(this).data('still'));
+      $(this).attr('data-state', 'still');
+  }
+});
