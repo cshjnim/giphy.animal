@@ -70,9 +70,9 @@ function renderButtons() {
   // Verifying buttons
   for (var i = 0; i < animals.length; i++) {
     var addButton = $('<button class="button">');
-    addButton.addClass("animal");
+    addButton.addClass("animal-btn");
     addButton.attr("data-animal", animals[i]);
-    addButton.html(animals[i]);
+    addButton.text(animals[i]);
 
     // add new buttons to the end of the list of existing buttons
     $("#buttons-view").append(addButton);
@@ -83,11 +83,11 @@ function renderButtons() {
 $("#add-giphy").on("click", function(event){
   event.preventDefault();
   var gifs = $("#giphy-input").val().trim();
-  animal.push(gifs);
-  $("#giphy-input").val("");
+  animals.push(gifs);
+ 
   renderButtons();
 });
 
 // Calls the buttons to be created in the class 'animal'
-$(document).on("click", ".animal", displayGif);
+$(document).on("click", ".animal-btn", displayGif);
 renderButtons();
